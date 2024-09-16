@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}services{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Our Services</h1>
+    </header>
+
+    <section id="services">
+        <div class="service">
+            <h2>Custom Ice Cream Creations</h2>
+            <p>Create your own ice cream from a wide variety of flavors, toppings, and sauces.</p>
+        </div>
+        <div class="service">
+            <h2>Event Catering</h2>
+            <p>We offer ice cream catering services for weddings, parties, and corporate events.</p>
+        </div>
+        <div class="service">
+            <h2>Seasonal Flavors</h2>
+            <p>Enjoy our limited-edition flavors that change with the seasons.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sweet Ice Cream Shop. All rights reserved.</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff8c00;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #services {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h2 {
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+{% endblock %}

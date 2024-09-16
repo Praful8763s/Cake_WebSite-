@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Sweet Ice Cream Shop{% endblock %}</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles for the navbar */
+    .navbar-brand {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #007bff;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #007bff;
+    }
+
+    .btn-outline-success {
+      color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-outline-success:hover {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .navbar-toggler {
+      border-color: #007bff;
+    }
+
+    /* Border container */
+    .border-container {
+      display: flex;
+      min-height: 100vh;
+      border-left: 5px solid #007bff;
+      border-right: 5px solid #007bff;
+      padding: 20px;
+    }
+
+    .main-content {
+      flex-grow: 1;
+    }
+
+    /* Custom styles for the ice cream sections */
+    .ice-cream-section {
+      margin-bottom: 30px;
+    }
+
+    /* Full screen image */
+    .ice-cream-section img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .ice-cream-section .description {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Delightful Bites</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="services.html">Ice-Cream</a></li>
+              <li><a class="dropdown-item" href="services.html">Softy</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="services.html">Family Pack of Ice-Cream</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Messages Section -->
+  <ul class="messages">
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}></li>
+  </ul>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <div class="border-container">
+    <div class="main-content">
+      <main role="main" class="container">
+        {% block body %}
+        <!-- Ice Cream Sections -->
+        <div class="row">
+          <div class="col-md-4 ice-cream-section">
+            <img src="icecream1.jpg" alt="Ice Cream 1">
+            <div class="description">
+              <h5>Chocolate Delight</h5>
+              <p>Rich and creamy chocolate ice cream topped with chocolate chips.</p>
+            </div>
+          </div>
+          <div class="col-md-4 ice-cream-section">
+            <img src="icecream2.jpg" alt="Ice Cream 2">
+            <div class="description">
+              <h5>Strawberry Swirl</h5>
+              <p>Delicious strawberry ice cream with a swirl of strawberry sauce.</p>
+            </div>
+          </div>
+          <div class="col-md-4 ice-cream-section">
+            <img src="icecream3.jpg" alt="Ice Cream 3">
+            <div class="description">
+              <h5>Vanilla Dream</h5>
+              <p>Classic vanilla ice cream with a hint of vanilla bean.</p>
+            </div>
+          </div>
+        </div>
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+<link href ="about.html">About Us</link>
+<link href ="services.html">Services</link>
+<link href ="contact.html">Contact Us</link>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}contact{% endblock %}
+
+{% block page_title %}Contact Us{% endblock %}
+
+{% block body %}
+  <!-- Content for Contact Us page -->
+  <div class="container-fluid px-0 mb-3">
+    <!-- Reduced image size by adding a custom class -->
+    <img src="https://placeimg.com/640/480/contact" class="img-fluid reduced-img" alt="Contact Us">
+  </div>
+  <div class="container mb-4 py-3">
+    <h2 class="text-center">Contact Us</h2> 
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <!-- Your form fields here -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="desc">Tell us about what you want to contact us for ..</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <style>
+    .reduced-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 400px; /* Limits the height of the image */
+        margin: 0 auto; /* Centers the image */
+        display: block;
+    }
+    .container h2 {
+        margin-bottom: 30px;
+        font-weight: bold;
+        color: #333;
+    }
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+    .form-control {
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        color: white; /* Text color for the button */
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+  </style>
+  
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - Sweet Ice Cream Shop{% endblock %}
+
+{% block page_title %}About Us{% endblock %}
+
+{% block body %}
+  <!-- Content for About Us page -->
+  <div class="about-us-page">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>Welcome to Sweet Ice Cream Shop! We are passionate about delivering the best ice cream experience to our customers. Here's a little bit about us:</p>
+      
+      <h2>Our Story</h2>
+      <p>Founded in [Year], Sweet Ice Cream Shop began with a simple mission: to create the finest ice cream using high-quality ingredients and traditional methods. Our journey started with a small family recipe, and over the years, we've grown into a beloved local favorite.</p>
+
+      <h2>Our Mission</h2>
+      <p>Our mission is to provide our customers with an exceptional ice cream experience through delicious flavors, friendly service, and a welcoming atmosphere. We believe that everyone deserves a sweet treat, and we're dedicated to making each visit special.</p>
+
+      <h2>Meet the Team</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="D:\Project 4\djangproject\Admin_Page\static\IMG_20230629_151932_792.jpg" class="card-img-top" alt="Team Member 1">
+            <div class="card-body">
+              <h5 class="card-title">Jane Doe</h5>
+              <p class="card-text">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="D:\Project 4\djangproject\Admin_Page\static\WhatsApp Image 2024-06-28 at 11.58.49_8b3df0a9.png" class="card-img-top" alt="Team Member 2">
+            <div class="card-body">
+              <h5 class="card-title">John Smith</h5>
+              <p class="card-text">Head Chef</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="path/to/team-member3.jpg" class="card-img-top" alt="Team Member 3">
+            <div class="card-body">
+              <h5 class="card-title">Emily Johnson</h5>
+              <p class="card-text">Customer Relations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Our Values</h2>
+      <ul>
+        <li>Quality: We use only the best ingredients in our ice cream.</li>
+        <li>Customer Focus: We strive to exceed our customers' expectations.</li>
+        <li>Community: We are committed to giving back to the community that supports us.</li>
+      </ul>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions or would like to learn more about us, feel free to <a href="#">contact us</a>.</p>
+    </div>
+  </div>
+
+  <style>
+    :root {
+      --background-color: {{ background_color }};
+      --header-color: {{ header_color }};
+      --text-color: {{ text_color }};
+      --link-color: {{ link_color }};
+      /* Add more variables as needed */
+    }
+
+    .about-us-page {
+      background-color: var(--background-color);
+      background-image: url('path/to/your/background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 0;
+      color: var(--text-color);
+    }
+    
+    .about-us-page h1, 
+    .about-us-page h2 {
+      color: var(--header-color);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    .about-us-page p, 
+    .about-us-page ul {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .about-us-page a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+    
+    .about-us-page .card {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for cards */
+      color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about-us-page .card-img-top {
+      border-bottom: 1px solid #fff;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .about-us-page .card-body {
+      padding: 20px;
+    }
+    
+    /* Optional: Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-us-page {
+        padding: 20px 0;
+      }
+      
+      .about-us-page .card {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+{% endblock %}
